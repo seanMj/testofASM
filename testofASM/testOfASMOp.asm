@@ -17,19 +17,14 @@ main PROC
 	
 	;	ax = 0x008f <- 16 bit <- 2 bytes
 	;	give eax the exact value of ax
-	;	here we are sign extending ax (a 16 bit value), into eax (a 32 bit value), as before
-	;	we are not able to do this unless we sign extended
 	movzx eax, ax
 	
 	;	eax = 0x0000ff8f <- 32 bit <- 4 bytes
-	;	after sign ext. this will cause the value of ax
-	;	to be sign extended, basically adding FF to the beginning of the value
 	movzx ax, code	
 	
 	movzx ecx, ax
 	;mov eax, 0
-	test eax, ecx	;see, oh-ya	both [==(65423)	
-	
+	test eax, ecx	;see, oh-ya	both [==(n)	
 	
 	push eax
 	call ExitProcess	;exit process is used within VS to display the values because im cheep with 'dem CPU cyc's
