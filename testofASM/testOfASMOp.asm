@@ -18,7 +18,7 @@ main PROC
 	;	ax = 0x008f <- 16 bit <- 2 bytes
 	;	give eax the exact value of ax
 	movzx eax, ax
-	
+	;opps I see what I did as I reviewed my code. my bad, dont use this. 
 	;	eax = 0x0000ff8f <- 32 bit <- 4 bytes
 	movzx ax, code	
 	
